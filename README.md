@@ -32,7 +32,7 @@ Official implementation of our NeuralSVG paper.
 <img src="docs/examples_dropout_astronaut.jpg" width="700px"/>  
 <br>
 <p align="center">
-<img src="docs/examples_control_color_sydney.jpg" width="800px"/>  
+<img src="docs/examples_control_color_sydney.jpg" width="700px"/>  
 <br>
 <p align="center">
 <img src="docs/examples_sketches_margarita.jpg" width="700px"/>  
