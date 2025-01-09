@@ -42,5 +42,13 @@ Official implementation of our NeuralSVG paper.
 If you find this code useful for your research, please consider citing us:
 
 ```
-TBD
+@misc{polaczek2025neuralsvgimplicitrepresentationtexttovector,
+      title={NeuralSVG: An Implicit Representation for Text-to-Vector Generation}, 
+      author={Sagi Polaczek and Yuval Alaluf and Elad Richardson and Yael Vinker and Daniel Cohen-Or},
+      year={2025},
+      eprint={2501.03992},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.03992}, 
+}
 ```
