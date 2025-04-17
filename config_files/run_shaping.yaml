@@ -1,0 +1,65 @@
+data:
+  image_path: null
+  num_segments: 4
+  num_strokes: 16  
+  is_closed: true
+  radius: 0.15
+  text_prompt: "minimalist vector art of a colorful rocket ship, icon, isolated on white background, digital art, trending on artstation."  # Not used if using CLIP loss
+  negative_prompt: "oversaturated, pixelated, foggy, hazy, blurry, bad structure, noisy, malformed, watermark, zoom"
+  generate_target_image: true
+  attn_init_xdog_intersec: true
+  use_background: true
+log:
+  allow_overwrite: true
+  exp_name: experiment
+  exp_root: ./experiments
+  log2wandb: false
+  visualization_truncation_idxs: [1,2,4,8,16,32,64,128,256,512]
+
+model:
+  mlp_dim: 128
+  mlp_num_layers: 2
+  text2img_model: stabilityai/stable-diffusion-2-1-base
+  lora_weights: ./lora_weights/lora_weights_sd21b_bg_color.safetensors
+  use_color: true
+  use_nested_dropout: true
+  nested_dropout_sampling_method: exp_decay
+  input_dim: 128
+  truncation_start_idx: 1
+  use_dropout_value: true
+  dropout_emb_dim: 16
+  dropout_last_item_prob: 0.7
+  dropout_temperature: 3
+  toggle_color: true
+  toggle_color_input_dim: 12
+  toggle_color_bg_colors: ["light-red", "light-green", "light-blue", "gold", "gray"]
+  toggle_color_method: "rgb"
+  toggle_color_init_eps: 0.25
+  toggle_sample_random_color_prob: 0.1
+  checkpoint_path: null
+
+  toggle_aspect_ratio: false
+  aspect_ratio_emb_dim: 16
+  toggle_aspect_ratio_values: ['1:1']
+
+
+optim: 
+  scheduler_type: LIN_RAMP_COS_DECAY
+  learning_rate: 0.018
+  target_lr: 0.012
+  learning_rate_pretrain: 0.01
+  warmup_steps: 200
+  sds_weight: 'default'
+
+  clip_grad_max_norm_colors: 0.1
+  clip_grad_max_norm_points: 0.01
+  sds_use_bg_color_suffix: true
+
+steps:
+  image_interval: 1000
+  image_interval_pretrain: 100 
+  max_steps: 4000
+  max_steps_pretrain: 300
+  start_nested_dropout_from_step: 200
+
+seed: 42
