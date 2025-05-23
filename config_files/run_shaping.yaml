@@ -58,7 +58,7 @@ optim:
 steps:
   image_interval: 1000
   image_interval_pretrain: 100 
-  max_steps: 4000
+  max_steps: 100
   max_steps_pretrain: 100
   start_nested_dropout_from_step: 200
 
